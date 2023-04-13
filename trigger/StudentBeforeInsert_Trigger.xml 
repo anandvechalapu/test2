@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trigger xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <isActive>true</isActive>
+    <description>Trigger to Automatically populate student's phone number into Mobile field</description>
+    <triggerSource>fromInsert</triggerSource>
+    <type>Before</type>
+    <name>StudentBeforeInsert</name>
+    <object>Student__c</object>
+    <definition>
+        <field>Phone</field>
+        <field>Mobile</field>
+        
+        <actions>
+            <name>StudentBeforeInsert</name>
+            <type>Flow</type>
+            <flow>
+                <name>StudentBeforeInsert</name>
+                <type>Flow</type>
+                <activeVersionNumber>1</activeVersionNumber>
+            </flow>
+        </actions>
+    </definition>
+</Trigger>
